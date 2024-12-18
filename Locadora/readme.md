@@ -1,121 +1,200 @@
-English below :point_down:
+English below :pointdown:
 
 
-# Automação de Gerenciamento de Contas
 
-Este projeto é uma suíte de testes automatizados para a funcionalidade de gerenciamento de contas de uma aplicação web. Ele utiliza Java, Maven, Selenium e Cucumber para realizar testes de ponta a ponta.
 
-## Estrutura do Projeto
+# Aluguel de Filmes
 
-- `src/test/java/runners/RunnerTest.java`: Contém a configuração do runner de testes para o Cucumber.
-- `src/test/java/steps/StepDefinitions.java`: Contém as definições de passos para os cenários do Cucumber.
-- `src/test/resources/inserir_conta.feature`: Contém o arquivo de feature com os cenários de teste escritos em Gherkin.
+Este projeto é uma aplicação Java para gerenciar o aluguel de filmes, incluindo controle de preços, datas de entrega e pontuação de aluguel.
+
+## Funcionalidades
+
+- Cadastrar aluguéis de filmes
+- Controlar preços e datas de entrega
+- Gerenciar estoque de filmes
+- Calcular pontuação de aluguel
 
 ## Tecnologias Utilizadas
 
-- **Java**: Linguagem de programação usada para escrever os scripts de teste.
-- **Maven**: Ferramenta de automação de build usada para gerenciar dependências e executar testes.
-- **Selenium**: WebDriver usado para automatizar a interação com o navegador web.
-- **Cucumber**: Framework usado para escrever e executar os cenários de teste no estilo BDD.
+- Java
+- Maven
+- JUnit
+- Cucumber
 
-## Pré-requisitos
+## Estrutura do Projeto
 
-- Java JDK 11 ou superior
-- Maven 3.6 ou superior
-- ChromeDriver (compatível com a versão do Chrome instalada em sua máquina)
+- `src/main/java`: Contém o código fonte principal
+  - `entidades`: Classes de entidades como `Filme`, `NotaAluguel`, `TipoAluguel`
+  - `services`: Classes de serviço como `AluguelService`
+  - `utils`: Classes utilitárias como `DateUtils`
+- `src/test/java`: Contém os testes
+  - `steps`: Definições de passos para os testes de Cucumber
+  - `runners`: Classes para executar os testes de Cucumber
+- `src/test/resources`: Contém os arquivos de recursos para os testes
+  - `features`: Arquivos de feature do Cucumber
 
-## Executando os Testes
+## Como Executar
 
 1. Clone o repositório:
     ```sh
-    git clone https://github.com/marialupiao/BDD-with-Cucumber-Java-.git
-    cd BDD-with-Cucumber-Java-
+    git clone <URL_DO_REPOSITORIO>
     ```
-
-2. Instale as dependências:
+2. Navegue até o diretório do projeto:
+    ```sh
+    cd <NOME_DO_PROJETO>
+    ```
+3. Compile o projeto usando Maven:
     ```sh
     mvn clean install
     ```
-
-3. Execute os testes:
+4. Execute os testes:
     ```sh
     mvn test
     ```
 
-## Arquivo de Feature
+## Estrutura dos Testes
 
-O arquivo de feature `inserir_conta.feature` contém os seguintes cenários:
+Os testes são escritos usando Cucumber e JUnit. As definições de passos estão localizadas no pacote `steps` e os arquivos de feature estão em `src/test/resources/features`.
 
-- **Deve inserir uma conta com sucesso**: Testa a inserção bem-sucedida de uma conta.
-- **Não deve inserir uma conta sem nome**: Testa a validação para inserir uma conta sem nome.
-- **Não deve inserir uma conta com nome já existente**: Testa a validação para inserir uma conta com um nome já existente.
+### Exemplo de Arquivo de Feature
 
-## Definições de Passos
+```gherkin
+#language: pt
 
-As definições de passos em `StepDefinitions.java` mapeiam os passos do Gherkin para métodos Java. Esses métodos usam o Selenium WebDriver para interagir com a aplicação web e realizar asserções.
+Funcionalidade: Alugar filme
+  Como um usuário eu quero cadastrar aluguéis de filmes
+  Para controlar preços e datas de entrega
 
-## Relatórios
+  Cenario: Deve alugar um filme com sucesso
+    Dado um filme
+     | estoque | 2 |
+     | preco   | 3 |
+     | tipo    | comum |
+    Quando alugar
+    Entao o preco do aluguel sera 3 reais
+    E a data de entrega sera em 1 dias
+    E o estoque do filme tera 1 unidade
+```
 
-Os resultados dos testes são gerados nos formatos HTML e JSON e podem ser encontrados no diretório `target/reports` após a execução dos testes.
+## Contribuição
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+3. Commit suas mudanças (`git commit -am 'Adiciona nova feature'`)
+4. Faça push para a branch (`git push origin feature/nova-feature`)
+5. Crie um novo Pull Request
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
 
-# Account Management Automation
 
-This project is an automated testing suite for the account management functionality of a web application. It uses Java, Maven, Selenium, and Cucumber to perform end-to-end tests.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Project Structure
 
-- `src/test/java/runners/RunnerTest.java`: Contains the test runner configuration for Cucumber.
-- `src/test/java/steps/StepDefinitions.java`: Contains the step definitions for the Cucumber scenarios.
-- `src/test/resources/inserir_conta.feature`: Contains the feature file with the test scenarios written in Gherkin.
+# Movie Rental
+
+This project is a Java application for managing movie rentals, including price control, delivery dates, and rental scoring.
+
+## Features
+
+- Register movie rentals
+- Control prices and delivery dates
+- Manage movie stock
+- Calculate rental scores
 
 ## Technologies Used
 
-- **Java**: Programming language used for writing the test scripts.
-- **Maven**: Build automation tool used for managing dependencies and running tests.
-- **Selenium**: WebDriver used for automating web browser interaction.
-- **Cucumber**: Framework used for writing and executing the test scenarios in a BDD style.
+- Java
+- Maven
+- JUnit
+- Cucumber
 
-## Prerequisites
+## Project Structure
 
-- Java JDK 11 or higher
-- Maven 3.6 or higher
-- ChromeDriver (compatible with the version of Chrome installed on your machine)
+- `src/main/java`: Contains the main source code
+  - `entidades`: Entity classes like `Filme`, `NotaAluguel`, `TipoAluguel`
+  - `services`: Service classes like `AluguelService`
+  - `utils`: Utility classes like `DateUtils`
+- `src/test/java`: Contains the tests
+  - `steps`: Step definitions for Cucumber tests
+  - `runners`: Classes to run Cucumber tests
+- `src/test/resources`: Contains resource files for tests
+  - `features`: Cucumber feature files
 
-## Running the Tests
+## How to Run
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/marialupiao/BDD-with-Cucumber-Java-.git
-    cd BDD-with-Cucumber-Java-
+    git clone <REPOSITORY_URL>
     ```
-
-2. Install the dependencies:
+2. Navigate to the project directory:
+    ```sh
+    cd <PROJECT_NAME>
+    ```
+3. Compile the project using Maven:
     ```sh
     mvn clean install
     ```
-
-3. Run the tests:
+4. Run the tests:
     ```sh
     mvn test
     ```
 
-## Feature File
+## Test Structure
 
-The feature file `inserir_conta.feature` contains the following scenarios:
+The tests are written using Cucumber and JUnit. The step definitions are located in the `steps` package, and the feature files are in `src/test/resources/features`.
 
-- **Deve inserir uma conta com sucesso**: Tests the successful insertion of an account.
-- **Não deve inserir uma conta sem nome**: Tests the validation for inserting an account without a name.
-- **Não deve inserir uma conta com nome já existente**: Tests the validation for inserting an account with an already existing name.
+### Example Feature File
 
-## Step Definitions
+```gherkin
+#language: en
 
-The step definitions in `StepDefinitions.java` map the Gherkin steps to Java methods. These methods use Selenium WebDriver to interact with the web application and perform assertions.
+Feature: Rent movie
+  As a user, I want to register movie rentals
+  To control prices and delivery dates
 
-## Reporting
+  Scenario: Should rent a movie successfully
+    Given a movie
+     | stock | 2 |
+     | price | 3 |
+     | type  | common |
+    When rent
+    Then the rental price will be 3 reais
+    And the delivery date will be in 1 day
+    And the movie stock will have 1 unit
 
-The test results are generated in both HTML and JSON formats and can be found in the `target/reports` directory after running the tests.
+  Scenario: Should not rent a movie without stock
+    Given a movie with 0 units in stock
+    When rent
+    Then it will not be possible due to lack of stock
+    And the movie stock will have 0 units
 
+  Scenario Outline: Should provide conditions according to rental type
+      Given a movie with 2 units in stock
+      And the rental price is <price> reais
+      And the rental type is "<type>"
+      When rent
+      Then the rental price will be <value> reais
+      And the delivery date will be in <days> days
+      And the score will be <score> points
 
+      Examples:
+      | price |   type    | value | days | score |
+      | 4     | extended  | 8     | 3    | 2     |
+      | 4     | common    | 4     | 1    | 1     |
+      | 5     | weekly    | 15    | 7    | 3     |
+```
+
+## Contribution
+
+1. Fork the project
+2. Create a branch for your feature (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Create a new Pull Request
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
