@@ -37,11 +37,11 @@ Este projeto é uma aplicação Java para gerenciar o aluguel de filmes, incluin
 
 1. Clone o repositório:
     ```sh
-    git clone <URL_DO_REPOSITORIO>
+    git clone [<URL_DO_REPOSITORIO>](https://github.com/marialupiao/BDD-with-Cucumber-Java-.git)
     ```
 2. Navegue até o diretório do projeto:
     ```sh
-    cd <NOME_DO_PROJETO>
+    cd BDD-with-Cucumber-Java-
     ```
 3. Compile o projeto usando Maven:
     ```sh
@@ -127,11 +127,11 @@ This project is a Java application for managing movie rentals, including price c
 
 1. Clone the repository:
     ```sh
-    git clone <REPOSITORY_URL>
+    git clone https://github.com/marialupiao/BDD-with-Cucumber-Java-.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd <PROJECT_NAME>
+    cd BDD-with-Cucumber-Java-
     ```
 3. Compile the project using Maven:
     ```sh
