@@ -37,7 +37,7 @@ Este projeto é uma aplicação Java para gerenciar o aluguel de filmes, incluin
 
 1. Clone o repositório:
     ```sh
-    git clone (https://github.com/marialupiao/BDD-with-Cucumber-Java-.git)
+    git clone https://github.com/marialupiao/BDD-with-Cucumber-Java-.git
     ```
 2. Navegue até o diretório do projeto:
     ```sh
